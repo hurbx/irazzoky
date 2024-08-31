@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5382f2b6-7737-4013-a0bc-6dbb051ec10d" name="Changes" comment="" />
+    <list default="true" id="5382f2b6-7737-4013-a0bc-6dbb051ec10d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/irazzoky.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/irazzoky/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/irazzoky/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/irazzoky/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/irazzoky/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/irazzoky/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecto/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -28,6 +50,32 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="irazzoky" type="Python.DjangoServer" factoryName="Django server">
+      <module name="irazzoky" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -43,8 +91,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725034754537</updated>
-      <workItem from="1725034762980" duration="1000" />
+      <workItem from="1725034762980" duration="197000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
