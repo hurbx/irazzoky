@@ -1,0 +1,43 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/niveles.css' %}" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    Bienvenid@ elije el nivel por el que quieres comenzar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 50px" class="row">
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/couple2.png' %}" alt="Imagen de niño" />
+        </div>
+        <div class="col-6 text-center but">
+            <div class="d-grid gap-5">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'nivel_1' %}">Nivel 1</a>
+                </button>
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'nivel_2' %}">Nivel 2</a>
+                </button>
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'nivel_3' %}">Nivel 3</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 100px">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'home' %}"><i class="bx bx-left-arrow"></i> Inicio</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

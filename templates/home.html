@@ -1,0 +1,33 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/home.css' %}" />
+<div class="container">
+    <div class="row">
+        <div class="col-8 text-center">
+            <img class="nino" src="{% static 'img/group1.png' %}" alt="Imagen de niño" />
+        </div>
+        <div style="margin-top: 400px" class="col-4 text-center">
+            <div class="d-grid gap-2 d-md-block">
+                <button style="font-size: 40px; color: white" class="btn btn-info" type="button">
+                    <a class="nav-link" href="{% url 'coms' %}">Comunicate Conmigo</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="line">
+                <button style="color: white" class="btn btn-info btn-lg" type="button">
+                    <a class="nav-link" href="{% url 'instrucciones' %}">Intrucciones</a>
+                </button>
+                <button style="color: white" class="btn btn-info btn-lg" type="button">Herramientas</button>
+                <button style="color: white" class="btn btn-info btn-lg" type="button">
+                    <a class="nav-link" href="{% url 'niveles' %}">Niveles</a>
+                </button>
+                <button style="color: white" class="btn btn-info btn-lg" type="button">
+                    <a class="nav-link" href="{% url 'niveles' %}">Jugar</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</div>

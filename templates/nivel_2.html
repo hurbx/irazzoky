@@ -1,0 +1,77 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/nivel_1.css' %}" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    Ordena Las Letras Correctamente
+                </button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 30px" class="row">
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/think.png' %}" alt="Imagen de niño" />
+        </div>
+        <div style="margin-top: 20px" class="col-6 text-center">
+            <div class="card">
+                <img src="{% static 'img/niña2.jpg' %}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">Opciones</h5>
+                    <p class="card-text">
+                        {% for letra in letras %}
+                        <button
+                            style="font-size: 20px; color: white"
+                            class="btn btn-info"
+                            type="button"
+                            onclick="selectLetter('{{ letra }}')"
+                        >
+                            {{ letra }}
+                        </button>
+                        {% endfor %}
+                    </p>
+                    <p style="font-size: 50px" id="word">_ _ _ _</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 30px">
+                <button style="font-size: 30px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'niveles' %}"><i class="bx bx-left-arrow"></i> Niveles</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Palabra objetivo
+    const targetWord = ["N", "I", "Ñ", "A"];
+    // Array que representa los guiones actuales
+    let currentWord = ["_", "_", "_", "_"];
+
+    // Función que se ejecuta cuando se presiona una letra
+    function selectLetter(letra) {
+        // Comprobar si la letra está en la palabra objetivo
+        const index = targetWord.indexOf(letra);
+
+        // Si la letra está en la palabra y aún no ha sido ingresada
+        if (index !== -1 && currentWord[index] === "_") {
+            // Reemplazar el guion en la posición correspondiente
+            currentWord[index] = letra;
+        }
+
+        // Actualizar la visualización de los guiones y letras
+        document.getElementById("word").textContent = currentWord.join(" ");
+
+        // Comprobar si la palabra completa ya fue formada
+        if (currentWord.join("") === targetWord.join("")) {
+            alert('¡Felicidades! Has formado la palabra "niña".');
+        }
+    }
+</script>
+
+{% endblock content %}

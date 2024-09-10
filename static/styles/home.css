@@ -1,0 +1,11 @@
+.nino {
+    margin-top: 100px;
+    width: 700px;
+}
+.line {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}

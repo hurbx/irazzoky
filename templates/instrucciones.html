@@ -1,0 +1,34 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/instrucciones.css' %}" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">Instrucciones</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/girl.png' %}" alt="Imagen de niño" />
+        </div>
+        <div class="col-6 text-center">
+            <div class="instru">
+                Para jugar debemos contar con un adulto responsable que este acargo de la supervision del menor mientras
+                desarrolla las actividades, no obstante a ello, su mision principal es guiar al usuario en los niveles,
+                indicando que debe realizar y que pasos son los que tiene que seguir para encontrar la victoria..
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 10px">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'home' %}"><i class="bx bx-left-arrow"></i> Inicio</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

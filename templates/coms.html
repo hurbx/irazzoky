@@ -1,0 +1,63 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/coms.css' %}" />
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    Bienvenid@ Escribe Tu Nombre
+                </button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 30px" class="row">
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/nino.png' %}" alt="Imagen de niño" />
+        </div>
+        <div style="margin-top: 50px" class="col-6 text-center">
+            <div class="card">
+                <div class="card-body custom">
+                    {% for letra in abecedario %}
+
+                    <button
+                        style="font-size: 20px; color: white"
+                        class="btn btn-info"
+                        type="button"
+                        onclick="selectLetter('{{ letra }}')"
+                    >
+                        {{ letra }}
+                    </button>
+
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="sign" class="sign">_ _ _ _ _ _ _ _</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 10px">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'home' %}"><i class="bx bx-left-arrow"></i> Inicio</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function selectLetter(letra) {
+        const signElement = document.getElementById("sign");
+
+        let guiones = signElement.textContent.split(" ");
+
+        const index = guiones.indexOf("_");
+        if (index !== -1) {
+            guiones[index] = letra;
+        }
+
+        signElement.textContent = guiones.join(" ");
+    }
+</script>
+
+{% endblock content %}

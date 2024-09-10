@@ -1,0 +1,55 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/nivel_1.css' %}" />
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">Escucha el Abecedario</button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 30px" class="row">
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/headphones.png' %}" alt="Imagen de niño" />
+        </div>
+        <div style="margin-top: 50px" class="col-6 text-center">
+            <div class="card">
+                <div class="card-body custom">
+                    {% for letra in abecedario %}
+                    <button
+                        style="font-size: 20px; color: white"
+                        class="btn btn-info"
+                        type="button"
+                        onclick="selectLetter('{{ letra }}')"
+                    >
+                        {{ letra }}
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 100px">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'niveles' %}"><i class="bx bx-left-arrow"></i> Niveles</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function speakLetter(letra) {
+        let utterance = new SpeechSynthesisUtterance(letra);
+
+        utterance.lang = "es-ES";
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function selectLetter(letra) {
+        speakLetter(letra);
+    }
+</script>
+{% endblock content %}

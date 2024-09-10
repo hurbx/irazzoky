@@ -1,0 +1,103 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/nivel_1.css' %}" />
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div style="margin-top: 90px" class="d-grid gap-2">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">Ordena el Abecedario</button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 30px" class="row">
+        <!-- Columna de imagen -->
+        <div class="col-6 text-center">
+            <img class="nino" src="{% static 'img/think.png' %}" alt="Imagen de niño" />
+        </div>
+
+        <!-- Columna de botones del abecedario -->
+        <div style="margin-top: 10px" class="col-6 text-center">
+            <div class="card">
+                <div class="card-body custom">
+                    {% for letra in abecedario %}
+                    <button
+                        style="font-size: 20px; color: white"
+                        class="btn btn-info"
+                        type="button"
+                        onclick="selectLetter('{{ letra }}')"
+                    >
+                        {{ letra }}
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna de guiones (lines) -->
+        <div style="margin-top: 10px" class="col-12 text-center">
+            <div style="margin-top: 10px" class="card">
+                <div class="card-body custom" id="lines-container">
+                    {% for letra in lines %}
+                    <button
+                        style="font-size: 15px; color: white"
+                        class="btn btn-info"
+                        type="button"
+                        id="line-{{ forloop.counter0 }}"
+                    >
+                        {{ letra }}
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="margin-top: 100px">
+                <button style="font-size: 40px" class="btn btn-primary" type="button">
+                    <a class="nav-link" href="{% url 'niveles' %}"><i class="bx bx-left-arrow"></i> Niveles</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Variable para rastrear la posición del guion actual
+    let currentIndex = 0;
+
+    // Abecedario ordenado (correcto)
+    const correctAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+    // Almacenar las letras seleccionadas por el usuario
+    let selectedLetters = [];
+
+    // Función que maneja la letra seleccionada
+    function selectLetter(letra) {
+        // Obtén el contenedor de los guiones (lines)
+        const lineElement = document.getElementById(`line-${currentIndex}`);
+
+        // Si existe el siguiente guion (verifica que no hemos alcanzado el final)
+        if (lineElement && currentIndex < 26) {
+            // Reemplaza el guion con la letra seleccionada
+            lineElement.textContent = letra;
+            selectedLetters.push(letra); // Añadir la letra seleccionada al array
+            currentIndex++; // Avanza al siguiente guion
+
+            // Comprobar si las letras están en el orden correcto
+            checkOrder();
+        }
+    }
+
+    // Función que comprueba si el abecedario está correctamente ordenado
+    function checkOrder() {
+        // Si el usuario ha seleccionado 26 letras, hacer la verificación
+        if (selectedLetters.length === 26) {
+            // Comparar las letras seleccionadas con el abecedario correcto
+            if (JSON.stringify(selectedLetters) === JSON.stringify(correctAlphabet)) {
+                alert("¡Felicidades! Has ordenado el abecedario correctamente.");
+            } else {
+                alert("El abecedario no está ordenado correctamente. Inténtalo de nuevo.");
+            }
+        }
+    }
+</script>
+{% endblock content %}
